@@ -9,7 +9,6 @@ import {createObjectCsvWriter} from "csv-writer"
 import bodyParser from "body-parser";
 import cors from 'cors'
 
-import ngrok from 'ngrok'
 import fs from 'fs'
 
 dotenv.config();
@@ -141,9 +140,4 @@ app.get("/reset", (req: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 
-  ngrok.connect(3000).then((ngrokUrl : any) => {
-    console.log(`Ngrok Tunnel is running in: ` + ngrokUrl)
-  }).catch((error: any) => {
-    console.log('Could not start ngrok tunnel ' + error)
-  })
 });
