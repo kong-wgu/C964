@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
 });
 app.get("/machinelearning", (req, res) => {
     console.log('Running Python Script');
-    const py = (0, child_process_1.spawn)(pythonInt, ['src/knn.py']);
+    const py = (0, child_process_1.spawn)(pythonInt, ['knn.py']);
     let dat = '';
     const init = new Promise(() => {
         py.stdout.on('data', (data) => {
