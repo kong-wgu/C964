@@ -37,7 +37,7 @@ const writer = (0, csv_writer_1.createObjectCsvWriter)({
         { id: "coffee_name", title: "coffee_name" },
     ]
 });
-const pythonInt = 'python3';
+const pythonInt = './venv/bin/python3';
 app.get("/", (req, res) => {
     res.send("Express + TypeScript Server");
 });

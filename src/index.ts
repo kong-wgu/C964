@@ -32,7 +32,7 @@ const writer = createObjectCsvWriter({
   ] 
 })
 
-const pythonInt = 'python3'
+const pythonInt = './venv/bin/python3'
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
