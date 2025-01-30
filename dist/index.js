@@ -19,6 +19,7 @@ const child_process_1 = require("child_process");
 const csv_writer_1 = require("csv-writer");
 const body_parser_1 = __importDefault(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
+const ngrok_1 = __importDefault(require("ngrok"));
 const fs_1 = __importDefault(require("fs"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
@@ -118,4 +119,9 @@ app.get("/reset", (req, res) => {
 });
 app.listen(port, () => {
     console.log(`[server]: Server is running at http://localhost:${port}`);
+    ngrok_1.default.connect(3000).then((ngrokUrl) => {
+        console.log(`Ngrok Tunnel is running in: ` + ngrokUrl);
+    }).catch((error) => {
+        console.log('Could not start ngrok tunnel ' + error);
+    });
 });
